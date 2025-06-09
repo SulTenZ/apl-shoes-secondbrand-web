@@ -1,7 +1,18 @@
+/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Stroke effect for transparent outlined text */
+.stroke-text {
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+  font-weight: 900;
+  font-family: 'Anton', sans-serif;
+}
+
+
+/* Marquee animation */
 @keyframes scrollLoop {
   0% {
     transform: translateX(0%);
@@ -15,3 +26,6 @@
   animation: scrollLoop 30s linear infinite;
 }
 
+html {
+  scroll-behavior: smooth;
+}

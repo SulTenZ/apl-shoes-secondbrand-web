@@ -1,4 +1,6 @@
+// src/sections/FAQ.jsx
 import { useState } from 'react';
+import FAQCard from './components/FAQCard';
 
 export default function FAQ() {
   const faqs = [
@@ -19,24 +21,20 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-screen-xl mx-auto px-6">
-        <h2 className="text-2xl font-bold mb-8">FAQ</h2>
+    <section id="faq" className="py-24 bg-gradient-to-b from-gray-950 to-black">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="font-main text-5xl font-black text-white tracking-wide mb-16 text-left">
+          FAQ
+        </h2>
+
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div
+            <FAQCard
               key={index}
-              className="border rounded-2xl px-6 py-4 cursor-pointer"
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            >
-              <div className="flex justify-between items-center">
-                <span>{faq.question}</span>
-                <span className="text-xl">{openIndex === index ? "−" : "↗"}</span>
-              </div>
-              {openIndex === index && (
-                <p className="text-gray-600 mt-2">{faq.answer}</p>
-              )}
-            </div>
+              faq={faq}
+              isOpen={openIndex === index}
+              onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+            />
           ))}
         </div>
       </div>

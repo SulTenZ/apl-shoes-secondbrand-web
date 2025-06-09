@@ -1,15 +1,16 @@
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import AboutUs from '../components/AboutUs';
-import OurCollection from '../components/OurCollection';
-import FAQ from '../components/FAQ';
-import ContactUs from '../components/ContactUs';
-import Footer from '../components/Footer';
-import ShoesBrand from '../components/ShoesBrand';
+// src/pages/Home.jsx
+import Navbar from '../sections/Navbar';
+import Hero from '../sections/Hero';
+import AboutUs from '../sections/AboutUs';
+import OurCollection from '../sections/OurCollection';
+import FAQ from '../sections/FAQ';
+import ContactUs from '../sections/ContactUs';
+import Footer from '../sections/Footer';
+import ShoesBrand from '../sections/ShoesBrand';
 
 export default function Home() {
   return (
-    <>
+    <div className="font-secondary min-h-screen bg-black">
       <Navbar />
       <Hero />
       <ShoesBrand />
@@ -18,6 +19,6 @@ export default function Home() {
       <FAQ />
       <ContactUs />
       <Footer />
-    </>
+    </div>
   );
 }
